@@ -1,0 +1,732 @@
+<!doctype html>
+<html>
+
+    <head>
+        <!-- Анастасія Носацька — Практика №6 — Створення інтерфейсного комплекта-->
+        <meta charset="UTF-8">
+        <title>Інтерфейсний комплект</title>
+        <meta name="viewport" content="width=device-width,  initial-scale=1, shrink-to-fit=no, minimal-ui">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@700&family=Noto+Sans&display=swap"
+            rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@700&family=Noto+Sans:ital@0;1&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            .ui-section {
+                margin-bottom: 9rem;
+            }
+            @media screen and (min-width: 721px) {
+                .ui-section {
+                    margin-bottom: 12rem;
+                }
+            }
+            .ui-grid > * {
+                color: var(--color-red);
+                background: #FFEEED;
+                padding: 1rem;
+            }
+            @media screen and (min-width: 721px) {
+                .ui-grid > * {
+                    padding: 2rem;
+                }
+            }
+
+            .ui-colors {
+                grid-auto-rows: minmax(140px, auto);
+            }
+
+            .ui-colors > * {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: stretch;
+                padding: 1rem;
+            }
+
+            .ui-outline {
+                outline: 1px solid rgb(0, 0, 0, 0.2);
+            }
+
+            @media screen and (min-width: 721px) {
+                .ui-colors > * {
+                    padding: 2rem;
+                }
+            }
+
+            .ui-icons > * {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <header class="layout-header">
+            <div class="layout-container">
+
+                <div class="header-wrapper">
+                    <a href="#" class="header-logo">
+                        <img src="logo.svg" width="126" height="56" 
+                        alt="Creative Practice">
+                    </a>
+
+                    <nav class="header-menu">
+                        <ul class="nav">
+                            <li class="d-none d-desk-block">
+                                <a href="#">Про курс</a>
+                            </li>
+
+                            <li class="d-none d-desk-block">
+                                <a href="#">Хто викладає</a>
+                            </li>
+
+                            <li class="dropdown d-none d-desk-block">
+                                <a href="#">Програма курсу</a>
+
+                                <div class="dropdown-wrapper">
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Теорія</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Практика</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="dropdown d-desk-none">
+                                <a href="#">Меню</a>
+
+                                <div class="dropdown-wrapper dd-left dd-tab-right">
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="#">Про курс</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Хто викладає</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Програма</a>
+                                        </li>
+                                        <li class="btn d-tab-none">
+                                            <div>
+                                                <a href="#" class="btn-green">Зареєструватись</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="btn d-none d-tab-block">
+                                <div>
+                                    <a href="#" class="btn-green">Зареєструватись</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+
+        <div class="layout-content">
+            <div class="layout-container">
+                <h1 class="mb-3">Інтерфейсний комплект</h1>
+
+                <section class="ul-section">
+                    <h2 class="h4 h-sup mb-4">Сітка</h2>
+
+                    <h3 class="my-4">Чотири колонки</h3>
+                    <div class="d-grid grid grid-cols-4 my-4 ui-grid f-small ta-center">
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+
+                        <div class="col-span-4">.col-span-4</div>
+
+                        <div class="col-span-3">.col-span-3</div>
+                        <div>&ndash;</div>
+
+                        <div class="col-span-2">.col-span-2</div>
+                        <div class="col-span-2">.col-span-2</div>
+                    </div>
+
+                    <h3 class="d-none d-tab-block my-4">Вісім колонок (планшети і ширше)</h3>
+
+                    <div class="d-none d-tab-grid grid grid-cols-8 my-4 ui-grid f-small ta-center">
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+                        <div>&ndash;</div>
+
+                        <div class="col-span-8">.col-span-8</div>
+
+                        <div class="col-span-7">.col-span-7</div>
+                        <div>&ndash;</div>
+
+                        <div class="col-span-6">.col-span-6</div>
+                        <div class="col-span-2">.col-span-2</div>
+
+                        <div class="col-span-5">.col-span-5</div>
+                        <div class="col-span-3">.col-span-3</div>
+
+                        <div class="col-span-4">.col-span-4</div>
+                        <div class="col-span-4">.col-span-4</div>
+                    </div>
+
+
+                    <h3 class="d-none d-desk-block my-4">Дванадцять колонок (комп'ютерна)</h3>
+
+
+                    <div class="d-none d-desk-grid grid ui-grid f-small ta-center">
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+                        <div>-</div>
+
+                        <div class="col-span-12">.col-span-12</div>
+
+                        <div class="col-span-11">.col-span-11</div>
+                        <div>-</div>
+
+                        <div class="col-span-10">.col-span-10</div>
+                        <div class="col-span-2">.col-span-2</div>
+
+                        <div class="col-span-9">.col-span-9</div>
+                        <div class="col-span-3">.col-span-3</div>
+
+                        <div class="col-span-8">.col-span-8</div>
+                        <div class="col-span-4">.col-span-4</div>
+
+                        <div class="col-span-7">.col-span-7</div>
+                        <div class="col-span-5">.col-span-5</div>
+
+                        <div class="col-span-6">.col-span-6</div>
+                        <div class="col-span-6">.col-span-6</div>
+                    </div>
+                </section>
+
+                <section class="ui-section">
+                    <div class="grid grid-cols-1 grid-cols-desk-12 gy-4">
+                        <div class="col-span-desk-6">
+                            <h2 class="h4 h-sup mb-4">Типографія</h2>
+
+                            <div class="h1">Заголовок H1</div>
+                            <div class="h2">Заголовок H2</div>
+                            <div class="h3">Заголовок H3</div>
+
+                            <p>
+                                Базовий текст. Курс «Основи фронтенду. HTML та CSS» — важливий перший крок для опанування фаху фронтенд-розробника. На
+                                курсі ми пройдемо шлях від знайомства з загальними принципами верстки вебпроєктів до створення адаптивної посадкової
+                                сторінки.
+                            </p>
+
+                            <p>
+                                <em>Похилений нарис.</em>
+                            </p>
+
+                           <div class="h3">Заголовок H3</div>
+
+                           <p>
+                                Базовий текст. Курс «Основи фронтенду. HTML та CSS» — важливий перший крок для опанування фаху фронтенд-розробника. На
+                                курсі ми пройдемо шлях від знайомства з загальними принципами верстки вебпроєктів до створення адаптивної посадкової
+                                сторінки.
+                           </p>
+
+                           <p class="f-small">
+                                В деяких випадках використовується трохи зменшений текст.
+                           </p>
+
+                           <p>
+                                <strong>Також в цьому проєкті передбачено насичену версію текстів.</strong>
+                           </p>
+
+                           <div class="h4 h-sup">Надзаголовок</div>
+
+                           <p>
+                                Використовується для маркування груп елементів в інтерфейсному комплекті.
+                           </p>
+                        </div>
+                        <div class="col-start-desk-8 col-span-desk-4">
+                            <h2 class="h4 h-sup mb-4">Посилання</h2>
+
+                            <div class="grid grid-cols-2 gy-4">
+                                <div class="col-span-2 col-span-tab-1 col-span-desk-2">
+                                    <h3 class="mb-4">На світлому тлі</h3>
+
+                                    <div class="fw-700 bg-light-purple b-rad-1 bx-2 py-1 px-2">
+                                        <div class="my-1">
+                                            <a href="#">Базовий стан посилання</a>
+                                        </div>
+
+                                        <div class="my-1">
+                                            <a href="https://google.com">Відвідане посилання</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-span-2 col-span-tab-1 col-span-desk-2">
+                                    <h3 class="mb-4">На темному тлі</h3>
+                                
+                                    <div class="fw-700 bg-dark-blue b-rad-1 bx-2 py-1 px-2">
+                                        <div class="my-1">
+                                            <a class="l-dark" href="#">Базовий стан посилання</a>
+                                        </div>
+                                
+                                        <div class="my-1">
+                                            <a class="l-dark" href="https://google.com">Відвідане посилання</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                </section>
+
+                <section class="ui-section">
+                    <h2 class="h4 h-sup mb-4">Колірна палітра</h2>
+
+                    <div class="grid grid-cols-1 grid-cols-tab-2 grid-cols-desk-4 ui-colors ta-center">
+                        
+                        <div class="c-white bg-black b-rad-1">
+                            <div class="fw-700 mb-1">Black</div>
+                            <div class="f-small mb-1">#000000</div>
+                            <div class="f-small">.c-black</div>
+                            <div class="f-small">.bg-black</div>
+                        </div>
+
+                        <div class="c-white bg-gray b-rad-1">
+                            <div class="fw-700 mb-1">Gray</div>
+                            <div class="f-small mb-1">#595E69</div>
+                            <div class="f-small">.c-gray</div>
+                            <div class="f-small">.bg-gray</div>
+                        </div>
+
+                        <div class="c-black bg-gray1 b-rad-1">
+                            <div class="fw-700 mb-1">Gray 1</div>
+                            <div class="f-small mb-1">#DDE1EB</div>
+                            <div class="f-small">.c-gray1</div>
+                            <div class="f-small">.bg-gray1</div>
+                        </div>
+
+                        <div class="c-black bg-gray2 b-rad-1">
+                            <div class="fw-700 mb-1">Gray 2</div>
+                            <div class="f-small mb-1">#F5F7FA</div>
+                            <div class="f-small">.c-gray2</div>
+                            <div class="f-small">.bg-gray2</div>
+                        </div>
+
+                        <div class="c-white bg-heaven b-rad-1">
+                            <div class="fw-700 mb-1">Heaven</div>
+                            <div class="f-small mb-1">#1269FF</div>
+                            <div class="f-small">.c-heaven</div>
+                            <div class="f-small">.bg-heaven</div>
+                        </div>
+
+                        <div class="c-white bg-blue b-rad-1">
+                            <div class="fw-700 mb-1">Blue</div>
+                            <div class="f-small mb-1">#689DFA</div>
+                            <div class="f-small">.c-blue</div>
+                            <div class="f-small">.bg-blue</div>
+                        </div>
+
+                        <div class="c-white bg-light-blue b-rad-1">
+                            <div class="fw-700 mb-1">Light Blue</div>
+                            <div class="f-small mb-1">#A5C6FF</div>
+                            <div class="f-small">.c-light-blue</div>
+                            <div class="f-small">.bg-light-blue</div>
+                        </div>
+
+                        <div class="c-black bg-white b-rad-1 ui-outline">
+                            <div class="fw-700 mb-1">White</div>
+                            <div class="f-small mb-1">#FFFFFF</div>
+                            <div class="f-small">.c-white</div>
+                            <div class="f-small">.bg-white</div>
+                        </div>
+
+                        <div class="c-white bg-dark-blue b-rad-1">
+                            <div class="fw-700 mb-1">Dark Blue</div>
+                            <div class="f-small mb-1">#0F054C</div>
+                            <div class="f-small">.c-dark-blue</div>
+                            <div class="f-small">.bg-dark-blue</div>
+                        </div>
+
+                        <div class="c-black bg-pink b-rad-1">
+                            <div class="fw-700 mb-1">Pink</div>
+                            <div class="f-small mb-1">#FF95CD</div>
+                            <div class="f-small">.c-pink</div>
+                            <div class="f-small">.bg-pink</div>
+                        </div>
+
+                        <div class="c-black bg-light-pink b-rad-1">
+                            <div class="fw-700 mb-1">Light Pink</div>
+                            <div class="f-small mb-1">#EEC3F5</div>
+                            <div class="f-small">.c-light-pink</div>
+                            <div class="f-small">.bg-light-pink</div>
+                        </div>
+
+                        <div class="c-black bg-light-purple b-rad-1">
+                            <div class="fw-700 mb-1">Light Purple</div>
+                            <div class="f-small mb-1">#EFEDFC</div>
+                            <div class="f-small">.c-light-purple</div>
+                            <div class="f-small">.bg-light-purple</div>
+                        </div>
+
+                        <div class="c-black bg-bright-turquoise b-rad-1">
+                            <div class="fw-700 mb-1">Bright Turquoise</div>
+                            <div class="f-small mb-1">#69EFE9</div>
+                            <div class="f-small">.c-bright-turquoise</div>
+                            <div class="f-small">.bg-bright-turquoise</div>
+                        </div>
+
+                        <div class="c-black bg-turquoise b-rad-1">
+                            <div class="fw-700 mb-1">Turquoise</div>
+                            <div class="f-small mb-1">#AAF3F0</div>
+                            <div class="f-small">.c-turquoise</div>
+                            <div class="f-small">.bg-turquoise</div>
+                        </div>
+
+                        <div class="c-black bg-light-turquoise b-rad-1">
+                            <div class="fw-700 mb-1">Light-turquoise</div>
+                            <div class="f-small mb-1">#EEFFFE</div>
+                            <div class="f-small">.c-light-turquoise</div>
+                            <div class="f-small">.bg-light-turquoise</div>
+                        </div>
+
+                        <div class="c-white bg-dark-purple-gray b-rad-1">
+                            <div class="fw-700 mb-1">Dark Purple-Gray</div>
+                            <div class="f-small mb-1">#8F58D6</div>
+                            <div class="f-small">.c-dark-purple-gray</div>
+                            <div class="f-small">.bg-dark-purple-gray</div>
+                        </div>
+
+                        <div class="c-white bg-red b-rad-1">
+                            <div class="fw-700 mb-1">Red</div>
+                            <div class="f-small mb-1">#FF0F0F</div>
+                            <div class="f-small">.c-red</div>
+                            <div class="f-small">.bg-red</div>
+                        </div>
+
+                        <div class="c-white bg-transparent-black b-rad-1">
+                            <div class="fw-700 mb-1">Transparent Black</div>
+                            <div class="f-small mb-1">rgba(0, 0, 0, 0.9)</div>
+                            <div class="f-small">.c-transparent-black</div>
+                            <div class="f-small">.bg-transparent-black</div>
+                        </div>
+
+                        <div class="c-white bg-dark-gray b-rad-1">
+                            <div class="fw-700 mb-1">Dark Gray</div>
+                            <div class="f-small mb-1">#1B1B1B</div>
+                            <div class="f-small">.c-dark-gray</div>
+                            <div class="f-small">.bg-dark-gray</div>
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+                <section class="ui-section">
+                    <h2 class="h4 h-sup mb-4">Іконки</h2>
+
+                    <div class="flex flex-auto fgy-4 ui-icons">
+
+                        <div class="bg-gray b-rad-1 p-3">
+                            <span class="arrow-down"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="language"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="play"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="handsClapping"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="filmSlate"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="timer"></span>
+                        </div>
+                        <div class="bg-dark-blue b-rad-1 p-3">
+                            <span class="magnifyingGlass"></span>
+                        </div>
+                        <div class="bg-gray2 b-rad-1 p-3">
+                            <span class="blue-arrow-down"></span>
+                        </div>
+                        <div class="bg-dark-gray b-rad-1 p-3">
+                            <span class="facebook m-n1"></span>
+                        </div>
+                        <div class="bg-dark-gray b-rad-1 p-3">
+                            <span class="instagram m-n1"></span>
+                        </div>
+                        <div class="bg-dark-gray b-rad-1 p-3">
+                            <span class="cases m-n1"></span>
+                        </div>
+                        <div class="bg-dark-gray b-rad-1 p-3">
+                            <span class="telegram m-n1"></span>
+                        </div>
+                        <div class="bg-gray2 b-rad-1 p-3">
+                            <span class="gray-arrow-right"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ui-section">
+                    <h2 class="h4 h-sup mb-4">Кнопки</h2>
+
+                    <div class="grid grid-cols-1 grid-cols-tab-2 grid-cols-desk-3 ta-center">
+                        <div class="bg-light-purple b-rad-1 py-3 px-2">
+                            <div class="f-small mb-1">Зелена кнопка</div>
+                            <div>
+                                <a href="#" class="btn-green">Зареєструватись</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-light-purple b-rad-1 py-3 px-2">
+                            <div class="f-small mb-1">Чорна кнопка</div>
+                            <div>
+                                <a href="#" class="btn-black">Зареєструватись</a>
+                            </div>
+                        </div>
+
+                        <div class="c-white bg-dark-blue b-rad-1 py-3 px-2">
+                            <div class="f-small mb-1">Біла кнопка</div>
+                            <div>
+                                <a href="#" class="btn-white">Зареєструватись</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ui-section">
+                    <h2 class="h4 h-sup mb-4">Форми</h2>
+
+                    <div class="grid grid-cols-1 grid-cols-tab-2 g-4">
+                        <div class="bg-light-purple b-rad-1 grid grid-cols-1 grid-cols-desk-6 py-3">
+                            <div class="col-start-desk-2 col-span-desk-4 form px-3 px-desk-0">
+
+                                <div class="field">
+                                    <div class="f-small align-self-center mb-1">Поле введення</div>
+                                    <label for="name">Ваше ім’я</label>
+                                    <input id="name" type="text" class="control" placeholder="Введіть ваше ім’я">
+                                </div>
+
+                                <div class="field error">
+                                    <label for="name-error">Ваше ім’я</label>
+                                    <input id="name-error" type="text" class="control" placeholder="Введіть ваше ім’я">
+                                    <p class="error-msg">Текст помилки</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light-purple b-rad-1 grid grid-cols-1 grid-cols-desk-6 py-3">
+                            <div class="col-start-desk-2 col-span-desk-4 form px-3 px-desk-0">
+                                <div class="field">
+                                    <div class="f-small align-self-center mb-1">Поле вибору</div>
+                                    <label for="region">Ваш регіон</label>
+                                    <select id="region" class="control">
+                                        <option class="default" selected>Оберіть країну</option>
+                                        <option>Україна</option>
+                                        <option>Польща</option>
+                                    </select>
+                                </div>
+
+                                <div class="field error">
+                                    <label for="region-error">Ваш регіон</label>
+                                    <select id="region-error" class="control">
+                                        <option class="default">Оберіть країну</option>
+                                        <option selected>Німрлдрл</option>
+                                    </select>
+                                    <p class="error-msg">Невідома країна</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light-purple b-rad-1 grid grid-cols-1 grid-cols-desk-6 py-3">
+                            <div class="col-start-desk-2 col-span-desk-4 form px-3 px-desk-0">
+                                <div class="field">
+                                    <div class="f-small align-self-center mb-1">Прапорці</div>
+                                    <label>Один прапорець</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Погоджуюсь з <a href="#" class="fw-700">договором оферти</a>
+                                    </label>
+                                </div>
+
+                                <div class="field">
+                                    <label>Набір з кількох прапорців</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Перша опція
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Друга опція 
+                                    </label>
+                                </div>
+                                
+                                <div class="field error">
+                                    <label>Прапорець з помилкою</label>
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        Погоджуюсь з <a href="#" class="fw-700">договором оферти</a>
+                                    </label>
+                                    <p class="error-msg">Щоб відправити форму, вам необхідно 
+                                    погодитись з умовами договору оферти</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-light-purple b-rad-1 grid grid-cols-1 grid-cols-desk-6 py-3">
+                            <div class="col-start-desk-2 col-span-desk-4 form px-3 px-desk-0">
+                                <div class="field">
+                                    <div class="f-small align-self-center mb-1">Перемикачі</div>
+                                    <label>Набір перемикачів</label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio" checked>
+                                        Перший варіант
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio">
+                                        Другий варіант
+                                    </label>
+                                </div>
+
+                                <div class="field error">
+                                    <label>Перемикачі з помилкою</label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio-error">
+                                        Перший варіант
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="radio-error" checked>
+                                        Другий варіант
+                                    </label>
+                                    <p class="error-msg">Обраний вами варіант не схвалено</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ui-section">
+                    <h2 class="h4 h-sup mb-4">Компоненти</h2>
+
+                    <div class="grid grid-cols-1 grid-cols-desk-2 gy-4">
+
+                        <article class="program">
+                            <h3 class="program-title">Теорія</h3>
+
+                            <div class="program-modules">
+
+                                <article class="module">
+                                    <div class="module-info">
+                                        <h4 class="module-title">Знайомство з основними тегами</h4>
+                                        <div class="module-text">
+                                            <p>Вступ до курсу. Що таке HTML та CSS. Теги та їхні типи. 
+                                            Теги для розмітки тексту</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="module-image">
+                                        <img src="module1.jpg" width="172" height="96">
+                                    </div>
+                                </article>
+
+                                <article class="module">
+                                    <div class="module-info">
+                                        <h4 class="module-title">Робота зі стилями</h4>
+                                        <div class="module-text">
+                                            <p>Підключення каскадних таблиць стилів CSS та 
+                                            форматування текстів. Робота з таблицями.</p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="module-image">
+                                        <img src="module2.jpg" width="172" height="96">
+                                    </div>
+                                </article>
+                            </div>
+                        </article>
+                        <article class="programms">
+                            <div class="grid grid-cols-1 grid-cols-tab-2 grid-cols-desk-3 gy-4">
+                                <div class="col-span-desk-2">
+                                    <h3 class="h4 h-sup c-white mb-3">Інші курси Практики</h3>
+
+                                    <ul class="linklist flex flex-col fg-2">
+                                        <li>
+                                            <a href="#">Робота з Figma</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Основи вебдизайну</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Робота з Webflow</a>
+                                         </li>
+                                         <li>
+                                            <a href="#">Проєктування та дизайн інтерфейсів</a>
+                                        </li>
+                                 </ul>
+                                </div>
+
+                            <div class="col-span-desk-2">
+                                <h3 class="h4 h-sup c-white mb-3">Корисні посилання</h3>
+                                    
+                                <ul class="linklist flex flex-col fg-2">
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon.svg mr-1"></span>
+                                            <span>material.io</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon.svg mr-1"></span>
+                                            <span>mgetbootstrap.com</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                        </article>
+                     </div>
+
+                </section>
+            </div>
+        </div>
+
+
+    </body>
+</html>
